@@ -6,5 +6,9 @@ function db_connect(string $dbname, string $user='root', string $password=''):PD
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $pdo;
 }
-    
+
+function deleteFrom(PDO $db,string $table,string $condition){
+    $sql="DELETE FROM $table WHERE $condition";
+    return $db->exec($sql);
+}
 ?>
